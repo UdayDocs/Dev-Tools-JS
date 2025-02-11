@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+    
+    // Regular
+    console.log('hello')
+    
+    // Interpolated \ => string ignore
+    console.log('hello I\'m  ')
+    
+    // Interpolated %s => string replace
+    console.log('hello I\'m %s','🔥')
+    
+    // Styled
+    console.log('%c I\'m uday ','font-size:50px; background: black; text-shadow: 3px 1px 0 orange')
+    
+    // warning!
+    console.warn('Danger')
+    
+    // Error :|
+    console.error('opps')
+    
+    // Info
+    console.info('CheckPoint 1 : Now, You\'re expert in dev Tools  ')
+    
+    // Testing
+    const p = document.querySelector('p')
+    console.assert(p.classList.contains('5px'),'incorrect')
+    
+    // clearing
+    // console.clear()
+    
+    
+    
+    // Grouping together
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+    console.table(dogs)
+    
+    dogs.forEach(dog => {
+      console.group(dog.name)
+      //    console.groupCollapsed(dog.name) 
+      console.log(`This dog name is ${dog.name}`)
+      console.log(`${dog.name} is ${dog.age} years old `)
+      console.log(`${dog.name} can live ${dog.age*7}  years  `)
+      console.groupEnd(dog.name)
+      
+    })
+    
+
+    
+    
+    // counting
+    console.count('uday')
+    console.count('kiran')
+    console.count('uday')
+    console.count('kiran')
+    console.count('uday')
+    console.count('kiran')
+    console.count('uday')
+    console.count('uday')
+    console.count('kiran')
+    
+    
+    
+    // timing
+
+    console.time('fetching data')
+    fetch('https://api.github.com/users/wesbos')
+    .then(data => data.json)
+    .then(data => {
+      console.timeEnd('fetching data')
+      console.log(data);
+    })
+
+    // Viewing DOM Elements 
+    console.log(p)
+    //dir shows JavaScript object with its properties
+    console.dir(p)
+
+
+    </script>
+</body>
+</html>
